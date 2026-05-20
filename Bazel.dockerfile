@@ -26,3 +26,4 @@ COPY --from=swift_install ./swiftly /usr/local/bin/swiftly
 RUN swiftly init -y --skip-install
 RUN swiftly install latest --no-verify
 RUN echo 'export PATH="$HOME/.local/share/swiftly/bin:$PATH"' >> ~/.bashrc
+ENTRYPOINT bash
