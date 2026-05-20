@@ -7,6 +7,12 @@ jobs:
   docker:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        image:
+          - { dockerfile: Bazel.dockerfile, tag: bazel }
+          - { dockerfile: Rbe.dockerfile,   tag: rbe }
+
     permissions:
       contents: read
       packages: write
@@ -25,5 +31,5 @@ jobs:
       - uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/bazel:latest
-          file: Bazel.dockerfile
+          tags: ghcr.io/${{ github.repository_owner }}/${{ matrix.image.tag }}:latest
+          file: ${{ matrix.image.dockerfile }}
