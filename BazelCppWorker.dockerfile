@@ -9,5 +9,5 @@ RUN apt update && apt install -y --no-install-recommends \
         libpq-dev \
         libssl-dev \
         libcurl4-openssl-dev \
-        zlib1g-dev
+        zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
