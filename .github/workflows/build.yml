@@ -11,7 +11,7 @@ jobs:
       matrix:
         image:
           - { dockerfile: Bazel.dockerfile, tag: bazel }
-          - { dockerfile: Rbe.dockerfile,   tag: rbe }
+          - { dockerfile: BazeCppWorker.dockerfile,   tag: bazel_cpp_worker }
 
     permissions:
       contents: read
