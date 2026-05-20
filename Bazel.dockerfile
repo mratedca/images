@@ -14,7 +14,7 @@ RUN curl -O https://download.swift.org/swiftly/linux/swiftly-$(uname -m).tar.gz 
 
 FROM ubuntu:24.04
 RUN apt update && apt install -y python3 git
-COPY --from=go_install /go/bin/bazelisk /usr/local/bazelisk
+COPY --from=go_install /go/bin/bazelisk /usr/local/bin/bazelisk
 
 COPY --from=mold_install /mold-2.41.0-x86_64-linux/bin /bin
 COPY --from=mold_install /mold-2.41.0-x86_64-linux/lib /lib
