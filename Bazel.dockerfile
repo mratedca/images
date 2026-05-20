@@ -24,6 +24,5 @@ COPY --from=mold_install /mold-2.41.0-x86_64-linux/share /share
 RUN apt install -y --no-install-recommends --no-install-suggests binutils unzip gnupg2 libc6-dev libcurl4-openssl-dev libgcc-13-dev libpython3-dev libstdc++-13-dev libxml2-dev libncurses-dev libz3-dev pkg-config zlib1g-dev
 COPY --from=swift_install ./swiftly /usr/local/bin/swiftly
 RUN swiftly init -y --skip-install
-RUN swiftly install latest --no-verify
 ENV SWIFTLY_HOME=/root/.local/share/swiftly
 ENV PATH="${SWIFTLY_HOME}/bin:${PATH}"
