@@ -8,6 +8,7 @@ RUN apt update && apt install -y --no-install-recommends \
         libstdc++-13-dev \
         libpq-dev \
         libssl-dev \
+        libxml2-dev \
         libcurl4-openssl-dev \
         zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
