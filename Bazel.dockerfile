@@ -6,7 +6,7 @@ RUN apt update -y && apt install -y wget
 RUN wget https://github.com/rui314/mold/releases/download/v2.41.0/mold-2.41.0-x86_64-linux.tar.gz
 RUN tar -xf mold-2.41.0-x86_64-linux.tar.gz
 
-FROM swift:6.3.1@sha256:af0181a2fe491b45c935a962a45ab77db3d0b867016e481ac164704f09c656fa
+FROM swift:6.4.3@sha256:e0f67c4120502628d4ced5058df25d334332e21501ae1a0797fd0c0a96486e79
 RUN apt update && apt install -y python3 git
 COPY --from=go_install /go/bin/bazelisk /usr/local/bin/bazelisk
 
