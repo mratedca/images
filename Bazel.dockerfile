@@ -1,7 +1,7 @@
 FROM golang:1.27-bookworm@sha256:ce59b41415e2524ae99926fe1f37ce48ba8c194dcbd2a56a65436cdcefa2bd34 AS go_install
 RUN go install github.com/bazelbuild/bazelisk@latest
 
-FROM ubuntu:24.04@sha256:562111b88caa79c71391c0c4d3c2114a7d5c35915c20561fd893cb1e07929e6b AS mold_install
+FROM ubuntu:26.04@sha256:d66b366dac61b575bee2aef07e9c26e8070096fbe84a3d4d3eb0da069b5d76db AS mold_install
 RUN apt update -y && apt install -y wget
 RUN wget https://github.com/rui314/mold/releases/download/v2.41.0/mold-2.41.0-x86_64-linux.tar.gz
 RUN tar -xf mold-2.41.0-x86_64-linux.tar.gz
